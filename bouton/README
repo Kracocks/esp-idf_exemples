@@ -1,0 +1,42 @@
+# ESP-IDF Bouton
+
+Ce projet est un exemple d'utilisation de boutons sur un microcontroleur esp32
+
+## Initialisation
+
+### Activer l'environnement eim.
+
+Lancer la version GUI si disponible de EIM.
+
+```bash
+eim
+```
+
+Puis sélectionner la version de votre choix. La version utilisé initialement est la version 6.1.
+
+### Ajouter les dépendances
+
+Pour utiliser des boutons, il faut installer la dépendances nécessaire dans l'environnement virtuel
+
+```bash
+idf.py add-dependency "espressif/button=*"
+```
+
+ou manuellement l'ajouter dans un fichier ```idf_component.yml``` dans la racine du projet.
+
+```
+dependencies:
+  espressif/button: "^4.1.5"
+```
+
+### Construire le projet
+
+Après chaque modifications dans le code, il faut reconstruire le projet. Pour cela, il faut le faire dans l'environnement virtuel
+
+```bash
+idf.py build
+```
+
+## Infos
+
+Pour plus d'informations sur les boutons allez voir ce [lien](https://developer.espressif.com/blog/2026/02/component-introduction-button/#learn-more).

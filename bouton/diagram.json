@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Professor Doubt",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": -4.76,
+      "attrs": { "builder": "esp-idf" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 15.6, "left": 186.2, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 111.8,
+      "left": 144,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "esp:18", "green", [ "v48", "h-115.2" ] ],
+    [ "btn1:2.r", "esp:GND.2", "black", [ "h48.2", "v-134.2", "h-163.2" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0", "h-18.8", "v-28.8" ] ],
+    [ "btn1:1.l", "esp:17", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
